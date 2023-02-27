@@ -1,20 +1,41 @@
 body {
   margin: 0;
   padding: 0;
+  background: url(bg_adobe_express.svg), black;
+  background-size: cover;
+  opacity: 1;
 }
 span {
   border-bottom: 1px solid black;
   font-size: 35px;
 }
 #container {
+  background-color: rgba(255, 255, 255, 0.541);
   text-align: center;
   font-size: 25px;
   padding: 50px;
-  width: 100%;
+  width: 50%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+  border-radius: 20px;
 }
 div {
   margin-bottom: 50px;
+}
+#rem-points {
+  color: red;
+}
+.center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
+#status {
+  font-size: 40px;
 }
