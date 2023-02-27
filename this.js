@@ -1,4 +1,3 @@
-// reset_btn = document.getElementById("reset");
 guessing_word = document.getElementById("guessing-word");
 letter = document.getElementById("letter");
 _status = document.getElementById("status");
@@ -27,12 +26,6 @@ var correct_word = arr[randomNumber(0, 9)];
 var letter_count = 0;
 nb_letters = document.getElementById("nb-of-letters");
 nb_letters.innerText = "The word has " + correct_word.length + " letters";
-// for (i = 0; i < word.length; i++) {
-//   word[i].style.border = "red";
-// }
-// const place = () => {
-//   alert("letter");
-// };
 for (i = 0; i < correct_word.length; i++) {
   guessing_word = document.getElementById("guessing-word");
   e = document.createElement("span");
@@ -80,7 +73,7 @@ function place() {
       try_again.style.display = "block";
       try_again.innerText = "Play again";
       _score++;
-      document.getElementById("Score").innerText = "Score: " + _score;
+      document.getElementById("score").innerText = "Score: " + _score;
       place_btn.disabled = true;
       try_again.addEventListener("click", generate_new);
     }
@@ -94,6 +87,7 @@ function generate_new() {
   try_again.style.display = "none";
   place_btn.disabled = false;
   points = 5;
+  letter_count = 0;
   correct = false;
   correct_word = arr[randomNumber(1, 9)];
   nb_letters.innerText = "The word has " + correct_word.length + " letters";
@@ -109,7 +103,3 @@ function randomNumber(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-// reset_btn.addEventListener("click", function () {
-//   score = 0;
-//   generate_new();
-// });
