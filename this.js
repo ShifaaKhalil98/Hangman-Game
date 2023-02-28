@@ -7,10 +7,10 @@ try_again.style.display = "none";
 place_btn = document.getElementById("place-letter");
 place_btn.disabled = false;
 place_btn.addEventListener("click", place);
-var _score = 0;
-var points = 5;
-var correct = false;
-var arr = [
+let _score = 0;
+let points = 5;
+let correct = false;
+const arr = [
   "procrastination",
   "psychobiography",
   "photosynthesize",
@@ -22,8 +22,8 @@ var arr = [
   "success",
   "witchcraft",
 ];
-var correct_word = arr[randomNumber(0, 9)];
-var letter_count = 0;
+let correct_word = arr[randomNumber(0, 9)];
+let letter_count = 0;
 nb_letters = document.getElementById("nb-of-letters");
 nb_letters.innerText = "The word has " + correct_word.length + " letters";
 for (i = 0; i < correct_word.length; i++) {
@@ -40,8 +40,8 @@ function place() {
     letter.value = "";
   } else {
     for (i = 0; i < correct_word.length; i++) {
-      if (correct_word[i] == letter.value) {
-        word[i].innerText = letter.value;
+      if (correct_word[i] == letter.value.toLowerCase()) {
+        word[i].innerText = letter.value.toLowerCase();
         _status.innerText = "You got it right!";
         _status.style.color = "green";
         document.getElementById("rem-points").innerText =
